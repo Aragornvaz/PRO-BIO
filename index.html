@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PróBio Engenharia | Tecnologia e Sustentabilidade</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<!-- Background fixo -->
+	<div class="bg-layer" aria-hidden="true">
+		<div id="topography" class="topography">
+			<div id="mouseGlow" class="mouse-glow"></div>
+
+			<svg class="topo-svg topo-base" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+				<!-- 15 linhas -->
+				<path d="M -100 -100 Q 250 -100 500 -120 T 1100 -50" />
+				<path d="M -100 -20 Q 250 -20 500 -40 T 1100 30" stroke-dasharray="4,4" />
+				<path d="M -100 60 Q 250 60 500 40 T 1100 110" />
+				<path d="M -100 140 Q 250 140 500 120 T 1100 190" stroke-dasharray="4,4" />
+				<path d="M -100 220 Q 250 220 500 200 T 1100 270" />
+				<path d="M -100 300 Q 250 300 500 280 T 1100 350" stroke-dasharray="4,4" />
+				<path d="M -100 380 Q 250 380 500 360 T 1100 430" />
+				<path d="M -100 460 Q 250 460 500 440 T 1100 510" stroke-dasharray="4,4" />
+				<path d="M -100 540 Q 250 540 500 520 T 1100 590" />
+				<path d="M -100 620 Q 250 620 500 600 T 1100 670" stroke-dasharray="4,4" />
+				<path d="M -100 700 Q 250 700 500 680 T 1100 750" />
+				<path d="M -100 780 Q 250 780 500 760 T 1100 830" stroke-dasharray="4,4" />
+				<path d="M -100 860 Q 250 860 500 840 T 1100 910" />
+				<path d="M -100 940 Q 250 940 500 920 T 1100 990" stroke-dasharray="4,4" />
+				<path d="M -100 1020 Q 250 1020 500 1000 T 1100 1070" />
+			</svg>
+
+			<svg class="topo-svg topo-detail" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+				<!-- 10 linhas -->
+				<path d="M -100 -80 Q 250 -40 500 -100 T 1100 0" stroke-dasharray="4,4" />
+				<path d="M -100 20 Q 250 60 500 0 T 1100 120" />
+				<path d="M -100 120 Q 250 160 500 100 T 1100 220" stroke-dasharray="4,4" />
+				<path d="M -100 220 Q 250 260 500 200 T 1100 320" />
+				<path d="M -100 320 Q 250 360 500 300 T 1100 420" stroke-dasharray="4,4" />
+				<path d="M -100 420 Q 250 460 500 400 T 1100 520" />
+				<path d="M -100 520 Q 250 560 500 500 T 1100 620" stroke-dasharray="4,4" />
+				<path d="M -100 620 Q 250 660 500 600 T 1100 720" />
+				<path d="M -100 720 Q 250 760 500 700 T 1100 820" stroke-dasharray="4,4" />
+				<path d="M -100 820 Q 250 860 500 800 T 1100 920" />
+			</svg>
+
+			<svg class="topo-svg topo-highlight" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+				<!-- 5 linhas -->
+				<path d="M -100 40 Q 250 80 500 20 T 1100 140" />
+				<path d="M -100 240 Q 250 280 500 220 T 1100 340" />
+				<path d="M -100 440 Q 250 480 500 420 T 1100 540" />
+				<path d="M -100 640 Q 250 680 500 620 T 1100 740" />
+				<path d="M -100 840 Q 250 880 500 820 T 1100 940" />
+			</svg>
+		</div>
+	</div>
+
+	<!-- Navbar -->
+	<nav class="nav" aria-label="Navegação principal">
+		<div class="glass-panel nav-inner">
+			<!-- Logo -->
+			<button class="logo" type="button" data-scroll="home" aria-label="Voltar para o topo">
+				<span class="logo-mark" aria-hidden="true">P</span>
+				<span class="logo-text">
+					<span class="logo-title">PróBio</span>
+					<span class="logo-sub">ENGENHARIA</span>
+				</span>
+			</button>
+
+			<!-- Desktop links -->
+			<div class="nav-links" role="navigation" aria-label="Seções">
+				<button class="nav-link is-active" type="button" data-scroll="home" data-section="home">
+					<span class="nav-icon" aria-hidden="true">
+						<!-- Activity icon (simplificado) -->
+						<svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6" /></svg>
+					</span>
+					Dashboard
+				</button>
+
+				<button class="nav-link" type="button" data-scroll="services" data-section="services">
+					<span class="nav-icon" aria-hidden="true">
+						<!-- Cpu icon (simplificado) -->
+						<svg viewBox="0 0 24 24"><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" /><rect x="7" y="7" width="10" height="10" rx="2" /></svg>
+					</span>
+					Sistemas
+				</button>
+
+				<button class="nav-link" type="button" data-scroll="contact" data-section="contact">
+					<span class="nav-icon" aria-hidden="true">
+						<!-- Globe icon (simplificado) -->
+						<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20a10 10 0 1 0 0-20Z" /><path d="M2 12h20" /><path d="M12 2c3 3 3 17 0 20c-3-3-3-17 0-20Z" /></svg>
+					</span>
+					Conexão
+				</button>
+			</div>
+
+			<!-- Action button -->
+			<a class="action-btn" href="#contact">Solicitar Diagnóstico</a>
+
+			<!-- Mobile toggle -->
+			<button class="mobile-toggle" type="button" id="mobileToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+				<span class="toggle-icon" aria-hidden="true">
+					<svg id="iconMenu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+					<svg id="iconClose" class="hidden" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></svg>
+				</span>
+			</button>
+		</div>
+
+		<!-- Mobile menu -->
+		<div class="glass-panel mobile-menu hidden" id="mobileMenu" role="navigation" aria-label="Menu mobile">
+			<button class="mobile-link is-active" type="button" data-scroll="home" data-section="home">
+				<span class="nav-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6" /></svg>
+				</span>
+				Dashboard
+			</button>
+
+			<button class="mobile-link" type="button" data-scroll="services" data-section="services">
+				<span class="nav-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24"><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" /><rect x="7" y="7" width="10" height="10" rx="2" /></svg>
+				</span>
+				Sistemas
+			</button>
+
+			<button class="mobile-link" type="button" data-scroll="contact" data-section="contact">
+				<span class="nav-icon" aria-hidden="true">
+					<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20a10 10 0 1 0 0-20Z" /><path d="M2 12h20" /><path d="M12 2c3 3 3 17 0 20c-3-3-3-17 0-20Z" /></svg>
+				</span>
+				Conexão
+			</button>
+		</div>
+	</nav>
+
+	<main class="main">
+		<!-- HERO -->
+		<section id="home" class="hero">
+			<div class="hero-content">
+				<div class="pill">
+					<span class="pulse-dot" aria-hidden="true"></span>
+					<span class="pill-text">Precision Intelligence Unit</span>
+				</div>
+
+				<h1 class="hero-title">
+					Engenharia que <span class="accent">regenera</span>,<br />
+					tecnologia que <span class="outline">regulariza</span>.
+				</h1>
+
+				<p class="hero-subtitle">
+					Sustentabilidade tratada como ciência de dados e conformidade estratégica. Fomos além das fotos de árvores para entregar soluções reais de engenharia ambiental.
+				</p>
+
+				<div class="hero-actions">
+					<button class="btn btn-primary" type="button" data-scroll="services">
+						Explorar Ecossistema
+						<span class="btn-arrow" aria-hidden="true">→</span>
+					</button>
+
+					<button class="btn btn-outline" type="button" data-scroll="contact">
+						Falar com Consultor
+					</button>
+				</div>
+			</div>
+
+			<!-- Blueprint lines -->
+			<div class="hero-blueprint" aria-hidden="true">
+				<svg viewBox="0 0 800 800">
+					<circle cx="400" cy="400" r="300" class="topo-line dashed" />
+					<circle cx="400" cy="400" r="200" class="topo-line" />
+					<circle cx="400" cy="400" r="100" class="topo-line" />
+					<line x1="0" y1="400" x2="800" y2="400" class="topo-line" />
+					<line x1="400" y1="0" x2="400" y2="800" class="topo-line" />
+				</svg>
+			</div>
+
+			<div class="scroll-indicator" aria-hidden="true">⌄</div>
+		</section>
+
+		<!-- SERVICES -->
+		<section id="services" class="services">
+			<div class="container">
+				<header class="section-header">
+					<span class="section-kicker">Sistema 02</span>
+					<h2 class="section-title">O Ecossistema de Serviços</h2>
+					<p class="section-subtitle">
+						Soluções integradas com rigor técnico para transformar passivos ambientais em ativos estratégicos.
+					</p>
+				</header>
+
+				<div class="grid">
+					<!-- Card 1 -->
+					<article class="card card--dark cut" style="--bg:url('https://images.unsplash.com/photo-1521791136064-7986c2959d93?auto=format&fit=crop&q=80&w=1200');">
+						<div class="card-bg"></div>
+						<div class="card-grid"></div>
+						<div class="scanline"></div>
+						<div class="card-overlay card-overlay--dark"></div>
+
+						<div class="card-top">
+							<div class="iconbox iconbox--dark" aria-hidden="true">✎</div>
+							<div class="node">
+								<span>NODE_LICENCIAMENTO</span>
+								<span>SECURE_ENCRYPTION_V2</span>
+							</div>
+						</div>
+
+						<h3 class="card-title">Licenciamento Ambiental</h3>
+						<p class="card-tag">Assessoria completa para regularização perante órgãos ambientais.</p>
+
+						<div class="card-details">
+							<div class="logline">TECHNICAL_LOG:</div>
+							<ul class="details">
+								<li>Obtenção de Licenças Ambientais (LP, LI e LO)</li>
+								<li>Gestão e Acompanhamento de Condicionantes</li>
+								<li>Elaboração de Estudos (PCA, RCA e RADA)</li>
+								<li>Laudo de Caracterização Ambiental (LCA)</li>
+							</ul>
+						</div>
+
+						<div class="corner" aria-hidden="true"></div>
+					</article>
+
+					<!-- Card 2 -->
+					<article class="card card--light cut-rev" style="--bg:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200');">
+						<div class="card-bg"></div>
+						<div class="card-grid"></div>
+						<div class="scanline"></div>
+						<div class="card-overlay card-overlay--light"></div>
+
+						<div class="card-top">
+							<div class="iconbox iconbox--light" aria-hidden="true">⌖</div>
+							<div class="node">
+								<span>NODE_TOPOGRAFIA</span>
+								<span>SECURE_ENCRYPTION_V2</span>
+							</div>
+						</div>
+
+						<h3 class="card-title">Topografia de Precisão</h3>
+						<p class="card-tag">Levantamentos técnicos com tecnologia GNSS RTK.</p>
+
+						<div class="card-details">
+							<div class="logline">TECHNICAL_LOG:</div>
+							<ul class="details">
+								<li>Georreferenciamento de Imóveis Rurais (INCRA)</li>
+								<li>Levantamentos Planialtimétricos</li>
+								<li>Locação de Obras e Loteamentos</li>
+								<li>Retificações de Matrícula e Desmembramentos</li>
+							</ul>
+						</div>
+
+						<div class="corner" aria-hidden="true"></div>
+					</article>
+
+					<!-- Card 3 -->
+					<article class="card card--soft cut" style="--bg:url('https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?auto=format&fit=crop&q=80&w=1200');">
+						<div class="card-bg"></div>
+						<div class="card-grid"></div>
+						<div class="scanline"></div>
+						<div class="card-overlay card-overlay--light"></div>
+
+						<div class="card-top">
+							<div class="iconbox iconbox--light" aria-hidden="true">≈</div>
+							<div class="node">
+								<span>NODE_HIDRICOS</span>
+								<span>SECURE_ENCRYPTION_V2</span>
+							</div>
+						</div>
+
+						<h3 class="card-title">Recursos Hídricos</h3>
+						<p class="card-tag">Gestão técnica para o uso sustentável da água.</p>
+
+						<div class="card-details">
+							<div class="logline">TECHNICAL_LOG:</div>
+							<ul class="details">
+								<li>Outorgas e Autorizações para Captações</li>
+								<li>Cadastro de Uso Insignificante e Isenções</li>
+								<li>Medição de Nível Dinâmico e Estático</li>
+								<li>Levantamento Batimétrico</li>
+							</ul>
+						</div>
+
+						<div class="corner" aria-hidden="true"></div>
+					</article>
+
+					<!-- Card 4 -->
+					<article class="card card--light cut-rev" style="--bg:url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=1200');">
+						<div class="card-bg"></div>
+						<div class="card-grid"></div>
+						<div class="scanline"></div>
+						<div class="card-overlay card-overlay--light"></div>
+
+						<div class="card-top">
+							<div class="iconbox iconbox--light" aria-hidden="true">⟲</div>
+							<div class="node">
+								<span>NODE_RESIDUOS</span>
+								<span>SECURE_ENCRYPTION_V2</span>
+							</div>
+						</div>
+
+						<h3 class="card-title">Gestão de Resíduos</h3>
+						<p class="card-tag">Planejamento eficiente para manejo e destinação final.</p>
+
+						<div class="card-details">
+							<div class="logline">TECHNICAL_LOG:</div>
+							<ul class="details">
+								<li>Elaboração e Execução de PGRS e PGRCC</li>
+								<li>Controle e Gestão de MTR, CDF e DMR</li>
+								<li>Implementação de Planos de Logística Reversa</li>
+								<li>Inventário Nacional de Resíduos Sólidos</li>
+							</ul>
+						</div>
+
+						<div class="corner" aria-hidden="true"></div>
+					</article>
+
+					<!-- Card 5 -->
+					<article class="card card--medium cut" style="--bg:url('https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80&w=1200');">
+						<div class="card-bg"></div>
+						<div class="card-grid"></div>
+						<div class="scanline"></div>
+						<div class="card-overlay card-overlay--dark"></div>
+
+						<div class="card-top">
+							<div class="iconbox iconbox--dark" aria-hidden="true">⚖</div>
+							<div class="node">
+								<span>NODE_CONFORMIDADE</span>
+								<span>SECURE_ENCRYPTION_V2</span>
+							</div>
+						</div>
+
+						<h3 class="card-title">Conformidade e Gestão</h3>
+						<p class="card-tag">Suporte especializado em normas e padrões ISO.</p>
+
+						<div class="card-details">
+							<div class="logline">TECHNICAL_LOG:</div>
+							<ul class="details">
+								<li>Cadastro Técnico Federal (CTF) e Relatório RAPP</li>
+								<li>IEF: Registro e Autorização para Supressão/Corte</li>
+								<li>Inventário de Gases de Efeito Estufa (GEE)</li>
+								<li>Suporte às Normas ISO 9001 e ISO 14001</li>
+							</ul>
+						</div>
+
+						<div class="corner" aria-hidden="true"></div>
+					</article>
+
+					<!-- Card 6 -->
+					<article class="card card--lime cut-rev" style="--bg:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200');">
+						<div class="card-bg"></div>
+						<div class="card-grid"></div>
+						<div class="scanline"></div>
+						<div class="card-overlay card-overlay--light"></div>
+
+						<div class="card-top">
+							<div class="iconbox iconbox--light" aria-hidden="true">🛡</div>
+							<div class="node">
+								<span>NODE_SEGURANCA</span>
+								<span>SECURE_ENCRYPTION_V2</span>
+							</div>
+						</div>
+
+						<h3 class="card-title">Monitoramento & Segurança</h3>
+						<p class="card-tag">Segurança operacional e impacto na vizinhança.</p>
+
+						<div class="card-details">
+							<div class="logline">TECHNICAL_LOG:</div>
+							<ul class="details">
+								<li>Auto de Vistoria do Corpo de Bombeiros (AVCB)</li>
+								<li>Teste de Estanqueidade e Inspeção (NR-13)</li>
+								<li>Estudo de Impacto de Vizinhança (EIV)</li>
+								<li>Testes de Opacidade (Emissões Atmosféricas)</li>
+							</ul>
+						</div>
+
+						<div class="corner" aria-hidden="true"></div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- FOOTER / CONTACT -->
+		<section id="contact" class="contact">
+			<footer class="footer">
+				<div class="container">
+					<div class="footer-top">
+						<div class="brand">
+							<div class="brand-badge" aria-hidden="true">PB</div>
+							<div>
+								<h3 class="brand-title">PróBio Engenharia</h3>
+								<span class="brand-sub">SERVIÇOS AMBIENTAIS</span>
+							</div>
+
+							<p class="brand-desc">
+								Redefinindo a relação entre indústria e meio ambiente através da engenharia de alta performance e rigor científico.
+							</p>
+
+							<div class="social">
+								<a class="social-btn" href="https://instagram.com/probioengenharia" target="_blank" rel="noopener">Instagram</a>
+								<a class="social-btn" href="https://linkedin.com/company/probioengenharia" target="_blank" rel="noopener">LinkedIn</a>
+							</div>
+						</div>
+
+						<div class="footer-grid">
+							<div>
+								<h4 class="footer-kicker">Central de Operações</h4>
+								<ul class="footer-list">
+									<li>
+										<span class="footer-label">WhatsApp</span>
+										<a class="footer-link" href="https://wa.me/5537998156144" target="_blank" rel="noopener">
+											(37) 99815-6144 <span aria-hidden="true">↗</span>
+										</a>
+									</li>
+									<li>
+										<span class="footer-label">Email Principal</span>
+										<a class="footer-link small" href="mailto:probioengenharia@gmail.com">probioengenharia@gmail.com <span aria-hidden="true">↗</span></a>
+									</li>
+								</ul>
+							</div>
+
+							<div>
+								<h4 class="footer-kicker">Inicie um Projeto</h4>
+								<p class="footer-text">
+									Precisa de uma análise técnica ou consultoria especializada? Nossa equipe está pronta para integrar sua operação.
+								</p>
+								<a class="brief-btn" href="mailto:probioengenharia@gmail.com">Enviar Briefing</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="footer-bottom">
+						<div>© 2019 PróBio Engenharia. All Rights Technical Reserve.</div>
+						<div class="bottom-right">
+							<span>Sustentabilidade Tecnológica</span>
+							<span>Made in Brazil</span>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</section>
+	</main>
+
+	<!-- HUD -->
+	<div class="hud" aria-hidden="true">
+		<span>LAT: -20.459675°</span>
+		<span>LONG: -45.438178°</span>
+		<span>SCAN: COMPLETED</span>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
